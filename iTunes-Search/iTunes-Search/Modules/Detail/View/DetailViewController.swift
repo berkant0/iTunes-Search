@@ -7,11 +7,6 @@
 
 import UIKit
 
-// MARK: - DetailViewDelegate
-protocol DetailViewControllerDelegate: AnyObject {
-    func setupViews()
-}
-
 // MARK: - DetailController
 class DetailViewController: UIViewController {
 
@@ -38,14 +33,6 @@ class DetailViewController: UIViewController {
                 self.thumbnailImageView.downloaded(from: imageUrl)
             }
         }
-    }
-}
-
-// MARK: - DetailViewDelegate
-extension DetailViewController: DetailViewControllerDelegate {
-    
-    func setupViews() {
-        navigationItem.title = "Detail"
     }
 }
 
