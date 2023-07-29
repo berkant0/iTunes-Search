@@ -188,7 +188,8 @@ extension HomeViewController: UICollectionViewDelegate {
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
+        let detailVC = DetailBuilder.build(item: self.viewModel.medias[indexPath.row])
+        self.navigationController?.pushViewController(detailVC, animated: true)
     }
 }
 

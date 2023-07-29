@@ -37,9 +37,7 @@ final class NetworkManager: Networking {
             completion(.failure(.badRequest))
             return
         }
-        
-        print("genere", generatedRequest)
-        
+                
         let task = session.dataTask(with: generatedRequest) { data, response, error in
             LoadingManager.shared.hide()
             

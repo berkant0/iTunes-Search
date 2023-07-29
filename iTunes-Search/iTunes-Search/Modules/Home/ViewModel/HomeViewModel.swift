@@ -28,8 +28,8 @@ final class HomeViewModel {
     }
     
     // Pagination
-    private let itemLimit = 20 // sabit
-    private var pageNumber = 1 // artan
+    private let itemLimit = 20
+    private var pageNumber = 1
 
     init(searchApi: MediaSearchable,
          alertManager: AlertShowable,
@@ -64,7 +64,6 @@ final class HomeViewModel {
                 }
                 self.responseSearch = response
                 self.delegate?.successSearchService()
-                print("response bu", response)
             }
         }
     }
