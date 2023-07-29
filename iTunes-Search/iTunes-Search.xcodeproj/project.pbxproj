@@ -24,6 +24,14 @@
 		7B2B31662A7564200079176A /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2B31652A7564200079176A /* Section.swift */; };
 		7B2B31682A7564340079176A /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2B31672A7564340079176A /* HomeCollectionViewCell.swift */; };
 		7B2B316F2A7564BA0079176A /* SearchResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2B316B2A7564BA0079176A /* SearchResponseModel.swift */; };
+		7B2B317D2A7566040079176A /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2B31752A7566040079176A /* RequestMethod.swift */; };
+		7B2B317E2A7566040079176A /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2B31772A7566040079176A /* ApiError.swift */; };
+		7B2B317F2A7566040079176A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2B31782A7566040079176A /* NetworkManager.swift */; };
+		7B2B31802A7566040079176A /* LoadingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2B317A2A7566040079176A /* LoadingManager.swift */; };
+		7B2B31812A7566040079176A /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2B317C2A7566040079176A /* AlertManager.swift */; };
+		7B2B31832A75661E0079176A /* RequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2B31822A75661E0079176A /* RequestModel.swift */; };
+		7B2B31862A75662C0079176A /* SearchRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2B31852A75662C0079176A /* SearchRequestModel.swift */; };
+		7B2B318B2A75664D0079176A /* SearchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2B318A2A75664D0079176A /* SearchAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +54,14 @@
 		7B2B31652A7564200079176A /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		7B2B31672A7564340079176A /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		7B2B316B2A7564BA0079176A /* SearchResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResponseModel.swift; sourceTree = "<group>"; };
+		7B2B31752A7566040079176A /* RequestMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestMethod.swift; sourceTree = "<group>"; };
+		7B2B31772A7566040079176A /* ApiError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
+		7B2B31782A7566040079176A /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		7B2B317A2A7566040079176A /* LoadingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingManager.swift; sourceTree = "<group>"; };
+		7B2B317C2A7566040079176A /* AlertManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
+		7B2B31822A75661E0079176A /* RequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestModel.swift; sourceTree = "<group>"; };
+		7B2B31852A75662C0079176A /* SearchRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchRequestModel.swift; sourceTree = "<group>"; };
+		7B2B318A2A75664D0079176A /* SearchAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +96,9 @@
 			children = (
 				7B2B31432A7560DA0079176A /* App */,
 				7B2B31692A7564BA0079176A /* Models */,
+				7B2B31722A7566040079176A /* Managers */,
 				7B2B31452A7561030079176A /* Modules */,
+				7B2B31872A75664D0079176A /* Network */,
 				7B2B31442A7560E10079176A /* Resources */,
 				7B2B31532A7562FF0079176A /* Utils */,
 			);
@@ -215,7 +233,9 @@
 		7B2B31692A7564BA0079176A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7B2B31822A75661E0079176A /* RequestModel.swift */,
 				7B2B316A2A7564BA0079176A /* Response */,
+				7B2B31842A75662C0079176A /* Request */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -226,6 +246,90 @@
 				7B2B316B2A7564BA0079176A /* SearchResponseModel.swift */,
 			);
 			path = Response;
+			sourceTree = "<group>";
+		};
+		7B2B31722A7566040079176A /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				7B2B31732A7566040079176A /* NetworkManager */,
+				7B2B31792A7566040079176A /* LoadingManager */,
+				7B2B317B2A7566040079176A /* AlertManager */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		7B2B31732A7566040079176A /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				7B2B31742A7566040079176A /* RequestMethod */,
+				7B2B31762A7566040079176A /* ApiError */,
+				7B2B31782A7566040079176A /* NetworkManager.swift */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		7B2B31742A7566040079176A /* RequestMethod */ = {
+			isa = PBXGroup;
+			children = (
+				7B2B31752A7566040079176A /* RequestMethod.swift */,
+			);
+			path = RequestMethod;
+			sourceTree = "<group>";
+		};
+		7B2B31762A7566040079176A /* ApiError */ = {
+			isa = PBXGroup;
+			children = (
+				7B2B31772A7566040079176A /* ApiError.swift */,
+			);
+			path = ApiError;
+			sourceTree = "<group>";
+		};
+		7B2B31792A7566040079176A /* LoadingManager */ = {
+			isa = PBXGroup;
+			children = (
+				7B2B317A2A7566040079176A /* LoadingManager.swift */,
+			);
+			path = LoadingManager;
+			sourceTree = "<group>";
+		};
+		7B2B317B2A7566040079176A /* AlertManager */ = {
+			isa = PBXGroup;
+			children = (
+				7B2B317C2A7566040079176A /* AlertManager.swift */,
+			);
+			path = AlertManager;
+			sourceTree = "<group>";
+		};
+		7B2B31842A75662C0079176A /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				7B2B31852A75662C0079176A /* SearchRequestModel.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		7B2B31872A75664D0079176A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				7B2B31882A75664D0079176A /* APIs */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		7B2B31882A75664D0079176A /* APIs */ = {
+			isa = PBXGroup;
+			children = (
+				7B2B31892A75664D0079176A /* Search */,
+			);
+			path = APIs;
+			sourceTree = "<group>";
+		};
+		7B2B31892A75664D0079176A /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				7B2B318A2A75664D0079176A /* SearchAPI.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,19 +403,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B2B318B2A75664D0079176A /* SearchAPI.swift in Sources */,
 				7B2B315D2A7563630079176A /* String+Extension.swift in Sources */,
 				7B2B31502A7562250079176A /* HomeBuilder.swift in Sources */,
+				7B2B31802A7566040079176A /* LoadingManager.swift in Sources */,
 				7B2B31302A7560CE0079176A /* AppDelegate.swift in Sources */,
 				7B2B31642A75640E0079176A /* SectionHeaderReusableView.swift in Sources */,
 				7B2B315E2A7563630079176A /* UIImageView+Extensions.swift in Sources */,
 				7B2B31682A7564340079176A /* HomeCollectionViewCell.swift in Sources */,
 				7B2B31322A7560CE0079176A /* SceneDelegate.swift in Sources */,
 				7B2B31522A75622C0079176A /* HomeViewModel.swift in Sources */,
+				7B2B31862A75662C0079176A /* SearchRequestModel.swift in Sources */,
+				7B2B31812A7566040079176A /* AlertManager.swift in Sources */,
 				7B2B314A2A7561920079176A /* HomeViewController.swift in Sources */,
 				7B2B31552A75630E0079176A /* Constants.swift in Sources */,
+				7B2B317F2A7566040079176A /* NetworkManager.swift in Sources */,
 				7B2B316F2A7564BA0079176A /* SearchResponseModel.swift in Sources */,
 				7B2B31662A7564200079176A /* Section.swift in Sources */,
+				7B2B31832A75661E0079176A /* RequestModel.swift in Sources */,
 				7B2B315F2A7563630079176A /* UIView+Extension.swift in Sources */,
+				7B2B317E2A7566040079176A /* ApiError.swift in Sources */,
+				7B2B317D2A7566040079176A /* RequestMethod.swift in Sources */,
 				7B2B31582A7563300079176A /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
