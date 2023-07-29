@@ -24,6 +24,7 @@ class DetailViewController: UIViewController {
     }
 
     func configure(with item: MediaItem) {
+        /// Since IBOutlets cannot be lazy, they are not ready when the configure method runs, so dispatch has been added.
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             self.collectionNamelabel.text = item.collectionName
             self.collectionPriceLabel.text = "\(item.currency ?? .empty) \(item.collectionPrice ?? .zero)"
