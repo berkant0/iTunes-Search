@@ -27,6 +27,6 @@ There is no podfile or swift package manager in this project.
 
 ## Application Screenshots
 <span>
-  <img src= "https://github.com/berkant0/iTunes-Search/assets/55629683/61d6d335-6c7c-4511-8be8-b5eab3e53996" height="450" width="220"/>
-  <img src= "https://github.com/berkant0/iTunes-Search/assets/55629683/a22c8bfd-68fa-450a-9db1-7d969388d48c" height="450" width="220"/>
+  <img src= "https://github-production-user-asset-6210df.s3.amazonaws.com/55629683/256997460-03326261-8449-426f-a85a-9bfbc7dfba3d.png" height="450" width="220"/>
+  <img src= "https://github-production-user-asset-6210df.s3.amazonaws.com/55629683/256997457-fe4ec708-025b-4045-918e-2bd7f356e737.png" height="450" width="220"/>
 </span>
