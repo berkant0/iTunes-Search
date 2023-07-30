@@ -16,10 +16,6 @@ This project was made for Emlakjet to list music using "https://itunes.apple.com
 - **Singleton**
 - **Dependency Injection**
 
-## Additional Packages 
-
-There is no podfile or swift package manager in this project.
-  
 ## Application Features
 
 - Listing the music available in iTunes
