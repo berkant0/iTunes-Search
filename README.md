@@ -11,7 +11,7 @@ This project was made for Emlakjet to list music using "https://itunes.apple.com
 
 - **MVVM**
 - **Programmatic & XIB Layout**
-- **URLSession**
+- **Moya**
 - **Builder**
 - **Singleton**
 - **Dependency Injection**
