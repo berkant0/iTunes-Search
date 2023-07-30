@@ -10,20 +10,16 @@ import UIKit
 final class HomeBuilder {
     static func build() -> UINavigationController {
         let controller = HomeViewController()
-        
-        let urlSession = URLSession.shared
-        
+                
         let loadingManager = LoadingManager.shared
 
         let alertManager = AlertManager.shared
-        
-        let networkManager = NetworkManager(session: urlSession)
-        
-        let searchApi = SearchAPI(networkManager: networkManager)
+                
+        let homeRepository = HomeRepository.getInstance()
                 
         let navigationController = UINavigationController(rootViewController: controller)
 
-        controller.viewModel = HomeViewModel(searchApi: searchApi, alertManager: alertManager, loadingManager: loadingManager)
+        controller.viewModel = HomeViewModel(homeRepository: homeRepository, alertManager: alertManager, loadingManager: loadingManager)
 
         return navigationController
     }

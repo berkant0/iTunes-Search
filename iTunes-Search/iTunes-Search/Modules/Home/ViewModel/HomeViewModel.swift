@@ -13,51 +13,50 @@ protocol HomeViewModelDelegate: AnyObject {
 }
 
 final class HomeViewModel {
-    
+
     // MARK: Properties
-    private let searchApi: MediaSearchable
+    private let homeRepository: HomeRepositoryProtocol
     private let alertManager: AlertShowable
     private let loadingManager: Loading
 
     weak var delegate: HomeViewModelDelegate? = nil
-    
-    private var responseSearch: SearchResponseModel = .emptyInstance()
+
+    private var responseSearch: SearchResponse = .emptyInstance()
 
     var medias: [MediaItem] {
         return responseSearch.results ?? []
     }
-    
+
     // Pagination
     private let itemLimit = 20
     private var pageNumber = 1
 
-    init(searchApi: MediaSearchable,
-         alertManager: AlertShowable,
-         loadingManager: Loading) {
-        self.searchApi = searchApi
+    init(homeRepository: HomeRepositoryProtocol,
+        alertManager: AlertShowable,
+        loadingManager: Loading) {
+        self.homeRepository = homeRepository
         self.alertManager = alertManager
         self.loadingManager = loadingManager
     }
-    
+
     func getSearchServiceWithPagination(term: String) {
-       if !isReachLastPagePagination() {
+        if !isReachLastPagePagination() {
             self.pageNumber += 1
             self.searchService(with: term, limit: self.pageNumber * self.itemLimit)
-       } else {
-           self.pageNumber = 1
-       }
+        } else {
+            self.pageNumber = 1
+        }
     }
-    
+
     func searchService(with term: String, limit: Int) {
         loadingManager.show()
-        let request = SearchRequestModel(searchTerm: term, limit: String(limit))
-        searchApi.search(request: request) { [weak self] result in
+        homeRepository.getMedias(parameters: .init(searchTerm: term, limit: String(limit))) { [weak self] response, error in
             guard let self = self else { return }
             loadingManager.hide()
-            switch result {
-            case .failure(let error):
-                self.delegate?.failSearchService(error: error)
-            case .success(let response):
+            self.responseSearch = .emptyInstance()
+            if let error = error {
+                self.alertManager.showAlert(with: error)
+            } else if let response = response {
                 guard response.resultCount ?? .zero > 0 else {
                     self.delegate?.failSearchService(error: .notFound)
                     return
@@ -67,7 +66,7 @@ final class HomeViewModel {
             }
         }
     }
-    
+
     private func isReachLastPagePagination() -> Bool {
         let maxPage = 10
         return self.pageNumber >= maxPage

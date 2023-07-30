@@ -16,7 +16,7 @@ enum ApiError: Error {
     case serverError
     case timeOut
     case badRequest
-    
+    case commonError
 }
 
 // MARK: - Helpers
@@ -36,6 +36,8 @@ extension ApiError: CustomStringConvertible {
             return "Something went wrong. Please try again."
         case .badRequest:
             return "Bad request. Please try again."
+        case .commonError:
+            return "An unexpected error occurred while processing your request. Please try again later."
         }
     }
 }

@@ -1,5 +1,5 @@
 //
-//  SearchResponseModel.swift
+//  SearchResponse.swift
 //  iTunesSearch
 //
 //  Created by Berkant Dağtekin on 29.07.2023.
@@ -8,17 +8,17 @@
 import Foundation
 
 // MARK: - SearchResponseModel
-struct SearchResponseModel: Codable {
+struct SearchResponse: Codable {
     let resultCount: Int?
     let results: [MediaItem]?
-    
-    static func emptyInstance() -> SearchResponseModel {
+
+    static func emptyInstance() -> SearchResponse {
         return .init(resultCount: .zero, results: [])
     }
 }
 
 // MARK: - MediaItem
-struct MediaItem: Codable, Hashable{
+struct MediaItem: Codable, Hashable {
     let wrapperType: String?
     let kind: String?
     let collectionName: String?
