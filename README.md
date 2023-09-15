@@ -1,6 +1,6 @@
 # iTunes-Search
 
-This project was made for Emlakjet to list music using "https://itunes.apple.com/" api.
+This project was made for music listing using Apple's "https://itunes.apple.com/" API.
 
 ## Clone Project
 ```cli 
